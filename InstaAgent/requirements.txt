@@ -7,3 +7,4 @@ openai
 supabase
 sendgrid
 from_root
+-e.
