@@ -1,13 +1,42 @@
 # InstaAgent
 “Never miss a lead. Never miss a message.”
 
+## Goal:
+Automate Instagram DM replies to increase lead conversion, reduce response delay, and filter hot leads to WhatsApp/email for faster closure.
+
+## Devloping this agent for my ...
 # 📌 Project Plan: Instagram DM Auto-Agent
 
 ## 🚀 Project Overview
 
 An AI-powered auto-agent for Instagram DMs that helps small businesses reply instantly, capture lead info, and forward hot leads via email or WhatsApp.
 
+
 ---
+| Function                     | Description                                                         |
+| ---------------------------- | ------------------------------------------------------------------- |
+| 1. Instant DM reply          | Auto-respond to DMs in real-time using GPT-4                        |
+| 2. FAQ Handling              | Use GPT to answer common questions (pricing, services, timings)     |
+| 3. Lead Qualification        | Ask structured questions to extract name, phone, and intent         |
+| 4. Handoff to WhatsApp/email | Send hot leads to business email/WhatsApp via webhook or automation |
+| 5. Niche Adaptability        | Custom prompts and workflows for different businesses               |
+
+---
+
+## SystemArchitecture
+```bash
+Instagram DM → Meta API / Manychat
+               ↓
+         Message Handler (Webhook)
+               ↓
+         GPT-4 (via OpenAI API)
+               ↓
+     Response / Action Decision
+          ↙               ↘
+   Send Response        Store Lead Info
+                        ↘
+                Trigger WhatsApp/Email
+```
 
 ## 🎯 Goals
 
@@ -21,15 +50,17 @@ An AI-powered auto-agent for Instagram DMs that helps small businesses reply ins
 
 ## 🛠️ Tech Stack
 
-| Function           | Tool                        |
-|--------------------|-----------------------------|
-| Web server         | FastAPI (Python)            |
-| AI/NLP             | OpenAI GPT-4 API            |
-| IG integration     | Meta Messenger API          |
-| Lead storage       | Supabase                    |
-| Email alerts       | SendGrid                    |
-| Deployment         | Vercel / Render             |
-| Dev tool           | ngrok (local testing)       |
+| Layer               | Tools / Services                              |
+| ------------------- | --------------------------------------------- |
+| Frontend (optional) | Not needed for MVP (dashboard optional)       |
+| Backend             | Vercel / Replit + Flask or Next.js API routes |
+| AI Engine           | OpenAI GPT-4 API                              |
+| Automation          | Zapier / Make / NodeMailer (for emails)       |
+| Database            | Firebase / Supabase / MongoDB                 |
+| Messaging API       | Meta Messenger API or Manychat (no-code)      |
+| Lead Handoff        | WhatsApp API (via Twilio) / Email / CRM       |
+| Hosting             | Vercel (preferred for fast deployment)        |
+
 
 ---
 

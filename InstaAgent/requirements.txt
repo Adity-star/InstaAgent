@@ -1,1 +1,9 @@
 # requirements.txt
+fastapi
+uvicorn[standard]
+requests
+python-dotenv
+openai
+supabase
+sendgrid
+from_root
